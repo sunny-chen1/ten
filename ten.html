@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style>
+			#delete{
+				cursor: default;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="t1">
@@ -64,7 +69,8 @@
 					alert('还没填写内容');
 				}else{
 					$('ol')
-					.prepend(`<li id="s"><span id='delect'>x</span>${$('input').val()}</li>`);
+					.prepend(`<li id="s"><span id="delect">x</span>${$('input').val()}</li>`);
+					$('#delect').css('cursor','default');
 					$('input').val('');
 					$('#delect').click(function(){
 						$(this).parent().remove();
