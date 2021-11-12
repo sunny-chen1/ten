@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="t1">
+			<h1>JQuery实现添加删除</h4>
+			<input type="text">
+			<button type="button">添加</button><br>
+			<ol></ol>
+			<button type="button">清除列表</button>
+		</div>
+		<hr>
+		<h1>小测答案</h1>
+		<P>1、C  2、B 3、C 4、B 5、D 6、B 7、C 8、D 9、A 10、A 11、C 12、A 13、C 14、C 15、B 16、C 17、A 18、B 19、A 20、D</P>
+		<hr>
+		<h1>打印1-100</h1>
+		<xmp>
+			<?php
+			echo '<h1>打印1-100</h1>';
+			for($i=1;$i<=100;$i++){
+				echo $i,' ';
+			}
+			?>
+		</xmp>
+		<hr>
+		
+		<h1>打印1-100之间的偶数</h1>
+		<xmp>
+			<?php
+			echo '<h1>打印1-100之间的偶数</h1>';
+			for($i=1;$i<=100;$i++){
+			 if($i%2===0){
+				echo $i,' ';
+			 }
+			}
+			?>
+		</xmp>
+		<hr>
+		<h1>PHP第三题</h1>
+		<xmp>
+			<?php
+			echo "<h1>PHP第三题</h1>";
+			for ($i=1; $i<101; $i++){
+			 if($i%3==0 && $i%5==0){
+			  echo "foobar"," ";
+			 }else if($i%3==0){
+			  echo "foo"," ";
+			}else if($i%5==0){
+			  echo "bar"," ";
+			 }else{
+			  echo $i," ";
+			 }
+			}
+			?>
+		</xmp>
+		<hr>
+		<script src="libs/jquery.min.js"></script>
+		<script>
+			$('button').eq(0).click(function() {
+				if($('input').val()===''){
+					alert('还没填写内容');
+				}else{
+					$('ol')
+					.prepend(`<li id="s"><span id='delect'>x</span>${$('input').val()}</li>`);
+					$('input').val('');
+					$('#delect').click(function(){
+						$(this).parent().remove();
+					});
+				}
+			});
+			$('button').eq(1).click(function() {
+				$('ol').children().remove();
+			});
+		</script>
+	</body>
+</html>
